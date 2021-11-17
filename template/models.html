@@ -1,68 +1,147 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<link rel="icon" href="favicon.ico">
-		<title>AdherenceFinder-Team Kaskashi</title>
-		<!-- Bootstrap core CSS -->
-		<link href={% static 'css/bootstrap.min.css' %} rel="stylesheet">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-		<!-- Custom styles for this template -->
-		<link href={% static 'css/style.css' %} rel="stylesheet">
-		<link href={% static 'css/form.css' %} rel="stylesheet">
-	</head>
-	<body id="page-top">
-		<!-- Navigation -->
-		<nav class="navbar navbar-default">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header page-scroll">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					</button>
-					 <a class="navbar-brand page-scroll bg-dark" href="#page-top"><img src={% static 'images/logo1.jpg' %} alt="Treviso theme logo" style="width:150px;"></a> 
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="hidden">
-							<a href="#page-top"></a>
-						</li>
-							<li>
-							<a class="page-scroll" href={% url 'index' %}>HOME</a>
-						</li>
-							<li>
-							<a class="page-scroll" href="{% url 'models' %}">Models</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="{% url 'project' %}">Project</a>
-						</li>
-						<li>
-							<a class="page-scroll" href="#contact">Contact</a>
-						</li>
-					</ul>
-				</div>
-				<!-- /.navbar-collapse -->
-			</div>
-			<!-- /.container-fluid -->
-		</nav>
-            <div class="zf-templateWidth">
-        <form
-            action='{% url 'result' %}'
-            name='form' method='post'
-            accept-charset='UTF-8' id='form'>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>AdherenceFinder-Team Kaskashi</title>
+    <!-- Bootstrap core CSS -->
+    <link href={% static 'css/bootstrap.min.css' %} rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Custom styles for this template -->
+    <link href={% static 'css/style.css' %} rel="stylesheet">
+    <link href={% static 'css/form.css' %} rel="stylesheet">
+    <link href={% static 'css/model.css' %} rel="stylesheet">
+</head>
+
+<body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll bg-dark" href="#page-top"><img src={% static 'images/logo1.jpg' %}
+                        alt="Treviso theme logo" style="width:150px;"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href={% url 'index' %}>HOME</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'models' %}">Models</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{% url 'project' %}">Project</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <section class="our-webcoderskull padding-lg">
+        <div class="container">
+            <div class="row heading heading-icon">
+                <h2>Factors Affecting Adherence</h2>
+            </div>
+            <ul class="row">
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="cnt-block equal-hight" style="height: 349px;">
+                        <img src={% static 'images/Figure_1.png' %} class="img-responsive" alt="">
+                        <h3>Non-Adherency Vs Gender Graph</h3>
+                    </div>
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="cnt-block equal-hight" style="height: 349px;">
+                        <img src={% static 'images/Figure_2.png' %} class="img-responsive" alt="">
+                        <h3>Non-Adherency Vs Ethinicity Graph</h3>
+                    </div>
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="cnt-block equal-hight" style="height: 349px;">
+                        <img src={% static 'images/Figure_3.png' %} class="img-responsive" alt="">
+                        <h3>Non-Adherency as per Longitute & Latitude</h3>
+                    </div>
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="cnt-block equal-hight" style="height: 349px;">
+                        <img src={% static 'images/Figure_4.png' %} class="img-responsive" alt="">
+                        <h3>Non-Adherency Vs Race Graph</h3>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="row">
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="cnt-block equal-hight" style="height: 349px;">
+                        <img src={% static 'images/Figure_5.png' %} class="img-responsive" alt="">
+                        <h3>Non-adherency Vs County Garph</h3>
+                    </div>
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="cnt-block equal-hight" style="height: 349px;">
+                        <img src={% static 'images/Figure_6.png' %} class="img-responsive" alt="">
+                        <h3>Non-adherency Vs Country Garph</h3>
+                    </div>
+                </li>
+                <li class="col-12 col-md-6 col-lg-3">
+                    <div class="cnt-block equal-hight" style="height: 349px;">
+                        <img src={% static 'images/Figure_7.png' %} class="img-responsive" alt="">
+                        <h3>Non-Adherency Vs Age Grouping</h3>
+                    </div>
+                </li>
+            </ul>
+            <br>
+            <div class="row heading heading-icon">
+                <p>We plotted the different plots to discover the major contributing variables that will impact the
+                    adherency of the patient,we plotted charts to show the predominance of a gathering of individuals in
+                    regard of Gender,Ethinicity,Race,count,country and age.
+
+                    We had the option to see that among the sexual orientation Female are more adherence contrast with
+                    male(ie female being non-follower is close around 65% while that of male is 35%).The explanation of
+                    being Non-Adherence among female might be occupied with their family exercises or might be somewhat
+                    thoughtless.
+                    <br>
+                    As we go for race we can unmistakably see the larger part goes for non Hispanic(i.e around 88% of
+                    Non-Hispanic is nonadherent and 12% among Hispanic who are non adherence). <br>
+                    <br>
+                    At the point when we go for race there is no such race where there is greatest are Non follower ,we
+                    can see an equivalent appropriation in each race.<br>In region Nantucket around 67% individuals are
+                    non adherent,which tops the rally among other county.Even the country GT 83%people are Non disciple.
+                    <br>
+                    At last as we go for the gathering of ages we can unmistakably see that patients gathering in middle
+                    age are bound to be Non-Adherent, which have a level of 59%.
+                </p>
+            </div>
+        </div>
+    </section>
+
+        <div class="zf-templateWidth">
+        <form action= {% url 'result' %} name='form' method='post' accept-charset='UTF-8' id='form'>
             {% csrf_token %}
-            <input type="hidden" name="zf_referrer_name"
-                value="">
+            <input type="hidden" name="zf_referrer_name" value="">
             <!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
             <input type="hidden" name="zf_redirect_url" value="">
             <!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
@@ -81,10 +160,10 @@
                         <li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Country
                             </label>
                             <div class="zf-tempContDiv">
-                            <select class="zf-form-sBox" name="Dropdown" checktype="c1" type=value>
+                                <select class="zf-form-sBox" name="Dropdown" checktype="c1" type=value>
                                     <option selected="true" value="-Select-">-Select-</option>
                                     <option value="US" selected>US</option>
-                                    <option value="VN" >VN</option>
+                                    <option value="VN">VN</option>
                                     <option value="PE">PE</option>
                                     <option value="DO">DO</option>
                                     <option value="IT">IT</option>
@@ -125,7 +204,7 @@
                             </div>
                             <div class="zf-clearBoth"></div>
                         </li>
-                             <li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Ethnicity
+                        <li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Ethnicity
                             </label>
                             <div class="zf-tempContDiv"><select class="zf-form-sBox" name="Dropdown4" checktype="c1">
                                     <option selected="true" value="-Select-">-Select-</option>
@@ -195,11 +274,14 @@
                 </ul>
             </div><!-- 'zf-templateWrapper' ends -->
         </form>
-        </div><!-- 'zf-templateWidth' ends -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script src={% static 'js/bootstrap.min.js' %}></script>
-		<script src{% static 'js/SmoothScroll.js' %}></script>
-		<script src={% static 'js/theme-scripts.js' %}></script>
-		<script src={% static 'js/validation.js' %}></script>
-	</body>
+    </div>
+    <br>
+    <!-- 'zf-templateWidth' ends -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src={% static 'js/bootstrap.min.js' %}></script>
+    <script src{% static 'js/SmoothScroll.js' %}></script>
+    <script src={% static 'js/theme-scripts.js' %}></script>
+    <script src={% static 'js/validation.js' %}></script>
+</body>
+
 </html>
